@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(#1a1a2e, #000);
+  color: white;
+}
+
+/* Scene */
+.scene {
+  height: 300vh;
+  position: relative;
+}
+
+/* Title */
+#title {
+  position: fixed;
+  top: 40%;
+  width: 100%;
+  text-align: center;
+  font-size: 3rem;
+  z-index: 2;
+}
+
+/* Clouds */
+.clouds {
+  position: fixed;
+  width: 200%;
+  height: 100%;
+  background: url("https://i.ibb.co/7XqWS4C/clouds.png");
+  background-size: cover;
+  opacity: 0.5;
+  animation: moveClouds 60s linear infinite;
+}
+
+@keyframes moveClouds {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Door */
+.door {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%) scale(0.5);
+  width: 200px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.door-left, .door-right {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background: #3a3a3a;
+  top: 0;
+}
+
+.door-left {
+  left: 0;
+  transform-origin: left;
+}
+
+.door-right {
+  right: 0;
+  transform-origin: right;
+}
+
+/* Portfolio */
+.portfolio {
+  position: absolute;
+  bottom: -200vh;
+  width: 100%;
+  text-align: center;
+}
